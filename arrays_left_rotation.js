@@ -24,16 +24,17 @@ function readLine() {
 /////////////// ignore above this line ////////////////////
 
 function main() {
-    var a = readLine().toLowerCase();
-    var b = readLine().toLowerCase();   
-    if( a.length > 0 && b.length > 0 && a.length <= 10000 && b.length <= 10000 ){
-        for(var i=0; i < a.length; i++ ){
-            if( b.indexOf(a[i]) > -1 ){
-               b = b.replace(a[i], '');
-               a = a.replace(a[i], '');
-               i--;
-            }
+    var n_temp = readLine().split(' ');
+    var n = parseInt(n_temp[0]);
+    var k = parseInt(n_temp[1]);
+    a = readLine().split(' ');
+    a = a.map(Number);
+
+    if( n >= 1 && n <= 100000 && k <= n && k >=1 && parseInt(n) == n && k <= 1000000){
+        z = [];
+        for(var i=0;i<n;i++){
+            z[(n+i-k)%n] = a[i];
         }
-        console.log(a.length + b.length ); 
-    }
+        console.log(z.join().replace(/\,/g,' ')); 
+    }   
 }
