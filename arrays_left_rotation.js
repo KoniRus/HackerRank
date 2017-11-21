@@ -33,5 +33,5 @@ function main() {
     for(var i=0;i<n;i++){
         z[(n+i-k)%n] = a[i];
     }
-    console.log(z.join().replace(/\,/g,' ')); 
+    console.log(z.join(' ')); 
 }
