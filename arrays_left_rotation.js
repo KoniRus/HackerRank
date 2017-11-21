@@ -29,12 +29,9 @@ function main() {
     var k = parseInt(n_temp[1]);
     a = readLine().split(' ');
     a = a.map(Number);
-
-    if( n >= 1 && n <= 100000 && k <= n && k >=1 && parseInt(n) == n && k <= 1000000){
-        z = [];
-        for(var i=0;i<n;i++){
-            z[(n+i-k)%n] = a[i];
-        }
-        console.log(z.join().replace(/\,/g,' ')); 
-    }   
+    z = [];
+    for(var i=0;i<n;i++){
+        z[(n+i-k)%n] = a[i];
+    }
+    console.log(z.join().replace(/\,/g,' ')); 
 }
